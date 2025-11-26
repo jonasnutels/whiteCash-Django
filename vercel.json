@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/wsgi.py",
+      "src": "WhiteCash/wsgi.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb"
@@ -20,11 +20,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "api/wsgi.py"
+      "dest": "WhiteCash/wsgi.py"
     }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "api.settings",
+    "DJANGO_SETTINGS_MODULE": "WhiteCash.settings",
     "PYTHONUNBUFFERED": "1"
   }
 }
