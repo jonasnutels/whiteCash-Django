@@ -2,11 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "WhiteCash/wsgi.py",
+      "src": "WhiteCash/asgi.py",
       "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "config": { "maxLambdaSize": "50mb" }
     },
     {
       "src": "staticfiles/**/*",
@@ -14,17 +12,10 @@
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "WhiteCash/wsgi.py"
-    }
+    { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
+    { "src": "/(.*)", "dest": "WhiteCash/asgi.py" }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "WhiteCash.settings",
-    "PYTHONUNBUFFERED": "1"
+    "DJANGO_SETTINGS_MODULE": "WhiteCash.settings"
   }
 }
